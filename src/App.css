@@ -1,0 +1,388 @@
+/* App.css */
+body {
+  background-color: #f3f4f6;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #111;
+  margin-top: 0;
+}
+
+.total-box {
+  background-color: #1e293b;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.total-box h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+  color: #94a3b8;
+}
+
+.total-box p {
+  margin: 5px 0 0 0;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Form Styles */
+.expense-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.expense-form input, 
+.expense-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.expense-form input:focus, 
+.expense-form select:focus {
+  border-color: #3b82f6;
+}
+
+.expense-form input[type="text"] {
+  flex: 1;
+  min-width: 150px;
+}
+
+.expense-form input[type="number"] {
+  width: 80px;
+}
+
+.expense-form button {
+  padding: 10px 15px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.expense-form button:hover {
+  background-color: #2563eb;
+}
+
+/* List Styles */
+.expense-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.expense-item:last-child {
+  border-bottom: none;
+}
+
+.expense-info strong {
+  font-size: 16px;
+  color: #111;
+}
+
+.expense-category {
+  font-size: 12px;
+  background: #e5e7eb;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 10px;
+  color: #4b5563;
+  text-transform: capitalize;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  text-decoration: underline;
+}
+
+.empty-state {
+  text-align: center;
+  color: #6b7280;
+  padding: 20px 0;
+}
+.add-category-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #ccc;
+}
+
+.add-category-box input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+}
+
+.add-category-box button {
+  padding: 10px 15px;
+  background-color: #10b981; /* Green color to distinguish from Add Expense */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-category-box button:hover {
+  background-color: #059669;
+}
+.clear-all-btn {
+  background-color: transparent;
+  color: #ef4444; /* Red text */
+  border: 1px solid #ef4444;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.clear-all-btn:hover {
+  background-color: #ef4444;
+  color: white;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.currency-select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* --- CARD GRID LAYOUT --- */
+
+/* The top row for Total and Currency */
+.top-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.top-row .total-box {
+  flex: 1; /* Takes up remaining space */
+  margin: 0; /* Remove the old margin */
+}
+
+/* The middle row for the Form and Add Category */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* The bottom row for the List and Chart */
+.bottom-row {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.list-column {
+  flex: 1.5; /* Takes up 60% of the space */
+}
+
+.chart-column {
+  flex: 1; /* Takes up 40% of the space */
+  border-left: 2px solid #e5e7eb;
+  padding-left: 20px;
+}
+
+/* Mobile Responsiveness: stack them on small screens */
+@media (max-width: 768px) {
+  .top-row, .bottom-row {
+    flex-direction: column;
+  }
+  .chart-column {
+    border-left: none;
+    border-top: 2px solid #e5e7eb;
+    padding-left: 0;
+    padding-top: 20px;
+  }
+}
+/* --- FILTER BAR --- */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filter-bar input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+}
+
+.filter-bar input:focus {
+  border-color: #3b82f6;
+}
+
+.filter-bar select {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  background-color: white;
+  cursor: pointer;
+}
+/* --- HEADER CONTROLS --- */
+.header-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.theme-btn {
+  background: none;
+  border: 1px solid #d1d5db;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: white;
+  transition: all 0.2s;
+}
+
+.theme-btn:hover {
+  background-color: #f3f4f6;
+}
+
+/* --- DARK MODE STYLES --- */
+body.dark {
+  background-color: #111827; /* Very dark blue/grey */
+  color: #f3f4f6; /* Off-white text */
+}
+
+body.dark .app-container {
+  background-color: #1f2937; /* Dark grey container */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  color: #f3f4f6;
+}
+
+body.dark h1, 
+body.dark h2 {
+  color: #f3f4f6;
+}
+
+body.dark .total-box {
+  background-color: #374151; /* Lighter dark box for contrast */
+}
+
+/* Form Inputs & Dropdowns */
+body.dark input,
+body.dark select {
+  background-color: #374151;
+  color: #f3f4f6;
+  border-color: #4b5563;
+}
+
+body.dark input::placeholder {
+  color: #9ca3af;
+}
+
+/* The Add Category Box */
+body.dark .add-category-box {
+  border-bottom-color: #4b5563;
+}
+
+/* The Expense List Items */
+body.dark .expense-item {
+  border-bottom-color: #374151;
+}
+
+body.dark .expense-info strong {
+  color: #f3f4f6;
+}
+
+body.dark .expense-category {
+  background-color: #374151;
+  color: #d1d5db;
+}
+
+/* The Theme Button in Dark Mode */
+body.dark .theme-btn {
+  background-color: #374151;
+  color: #f3f4f6;
+  border-color: #4b5563;
+}
+
+body.dark .theme-btn:hover {
+  background-color: #4b5563;
+}
+
+/* The Filter Bar */
+body.dark .filter-bar input,
+body.dark .filter-bar select {
+  background-color: #374151;
+  color: #f3f4f6;
+  border-color: #4b5563;
+}
+
+body.dark .empty-state {
+  color: #9ca3af;
+}
+
+/* Recharts Tooltip Override */
+body.dark .recharts-default-tooltip {
+  background-color: #1f2937 !important;
+  border-color: #4b5563 !important;
+  color: #f3f4f6 !important;
+}

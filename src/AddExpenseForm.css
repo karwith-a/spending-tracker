@@ -1,0 +1,57 @@
+/* AddExpenseForm.css */
+.expense-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.expense-form input, 
+.expense-form select {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.expense-form input:focus, 
+.expense-form select:focus {
+  border-color: #3b82f6;
+}
+
+.expense-form input[type="text"] {
+  flex: 1;
+  min-width: 120px;
+}
+
+.expense-form input[type="number"] {
+  width: 90px;
+}
+
+.expense-form button {
+  padding: 12px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.expense-form button:hover {
+  background-color: #2563eb;
+
+}
+.expense-form button {
+  white-space: nowrap; /* This stops the text from wrapping */
+}
+.expense-form input[type="date"] {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #4b5563;
+  font-family: inherit;
+}
