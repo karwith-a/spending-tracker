@@ -9,12 +9,11 @@ export default defineConfig({
   optimizeDeps: {
     include: ['recharts'],
     esbuildOptions: {
-      target: 'esnext' // This helps resolve ESM issues during build
+      target: 'esnext' 
     }
   },
   build: {
     rollupOptions: {
-      // This helps Rollup bundle correctly
       output: {
         manualChunks: undefined
       }
