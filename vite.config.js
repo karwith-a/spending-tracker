@@ -7,6 +7,17 @@ export default defineConfig({
     dedupe: ['react', 'react-dom']
   },
   optimizeDeps: {
-    include: ['recharts'] // <-- This is the key line
+    include: ['recharts'],
+    esbuildOptions: {
+      target: 'esnext' // This helps resolve ESM issues during build
+    }
+  },
+  build: {
+    rollupOptions: {
+      // This helps Rollup bundle correctly
+      output: {
+        manualChunks: undefined
+      }
+    }
   }
 })
