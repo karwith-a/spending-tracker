@@ -7,6 +7,6 @@ export default defineConfig({
     dedupe: ['react', 'react-dom']
   },
   optimizeDeps: {
-    include: ['recharts'] // <-- Force Vite to pre-bundle recharts
+    include: ['recharts'] // <-- This is the key line
   }
 })
